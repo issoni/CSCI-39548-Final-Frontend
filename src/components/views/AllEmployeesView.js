@@ -2,12 +2,22 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllEmployeesView = (props) => {
+  // let { deleteEmployee } = props; 
   if (!props.allEmplloyees.length) {
-    return <div>There are no employees.</div>;
+    return (
+      <div>
+        <p>There are no employees.</p> 
+          <Link to={'/newemployee'}>
+            <button>Add New Employee</button>
+            </Link> 
+      </div> 
+
+    ); 
   }
 
   return (
     <div>
+      
       {props.allEmployees.map((employee) => {
         let name = employee.firstname + " " + employee.lastname;
         return (
@@ -20,6 +30,9 @@ const AllEmployeesView = (props) => {
         );
 
       })}
+      <Link to={'/newemployee'}>
+        <button>Add New Employee</button>
+      </Link>
     </div>
   );
 };
