@@ -24,7 +24,7 @@ export const fetchEmployee = (employee) => {
 export const deleteEmployee = (employeeId) => {
   return {
     type: at.DELETE_EMPLOYEE, 
-    payload: employee,
+    payload: employeeId,
   };
 };
 
