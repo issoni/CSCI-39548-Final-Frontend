@@ -1,6 +1,3 @@
-
-
-
 const NewTaskView = (props) => {
   const {handleChange, handleSubmit, error } = props;
 
