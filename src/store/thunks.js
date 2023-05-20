@@ -44,7 +44,6 @@ export const fetchAllTasksThunk = () => async (dispatch) => {
 };
 
 export const addTaskThunk = (task) => async (dispatch) => {
-  // task = { title: "CSCI 127" }
   try {
     let res = await axios.post(`${path}/tasks`, task);
     dispatch(ac.addTask(res.data));
