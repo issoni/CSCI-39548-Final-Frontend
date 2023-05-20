@@ -11,8 +11,8 @@ class NewTaskContainer extends Component {
         super(props);
         this.state = {
           description: "",
-          prioritylevel: "",
-          completionstatus: false, 
+          priority: "",
+          isComplete: false, 
           employeeId: null, 
           redirect: false, 
           redirectId: null,
@@ -35,8 +35,8 @@ class NewTaskContainer extends Component {
         }
         let task = {
           description: this.state.description,
-          prioritylevel: this.state.prioritylevel,
-          completionstatus: this.state.completionstatus,
+          priority: this.state.priority,
+          isComplete: this.state.isComplete,
           employeeId: this.state.employeeId
         };
         
