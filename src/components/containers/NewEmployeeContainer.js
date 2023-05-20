@@ -27,11 +27,11 @@ class NewEmployeeContainer extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     if (this.state.firstname === "") {
-      this.setState({ error: "Name field is required" });
+      this.setState({ error: "First Name field is required" });
       return;
     }
     if (this.state.lastname === "") {
-      this.setState({ error: "Name field is required" });
+      this.setState({ error: "Last Name field is required" });
       return;
     }
     if (this.state.id === "") {

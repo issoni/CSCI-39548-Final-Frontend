@@ -139,6 +139,10 @@ class EditTaskContainer extends Component {
             <input type="text" name="completionstatus" value={this.state.completionstatus || ''} placeholder={task.completionstatus} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Employee ID: </label>
+            <input type="text" name="employeeId" value={this.state.employeeId || ''} placeholder={task.employeeId} onChange={(e) => this.handleChange(e)}/>
+            <br/>
+
             <select onChange={(e) => this.handleSelectChange(e)}>
               {task.employee!==null ?
                 <option value={task.employeeId}>{task.employee.firstname+" (current)"}</option>
