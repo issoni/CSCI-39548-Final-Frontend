@@ -42,8 +42,8 @@ class EditTaskContainer extends Component {
         super(props);
         this.state = {
           description: "", 
-          prioritylevel: "",
-          completionstatus: false,
+          priority: "",
+          isComplete: false,
           employeeId: null, 
           redirect: false, 
           redirectId: null,
@@ -57,8 +57,8 @@ class EditTaskContainer extends Component {
         this.props.fetchEmployees();
         this.setState({
             description: this.props.task.description, 
-            prioritylevel: this.props.task.prioritylevel,
-            completionstatus: this.props.task.completionstatus,
+            priority: this.props.task.priority,
+            isComplete: this.props.task.isComplete,
             employeeId: this.props.task.employeeId, 
         });
       }
@@ -94,8 +94,8 @@ class EditTaskContainer extends Component {
         let task = {
             id: this.props.task.id,
             description: this.state.description,
-            prioritylevel: this.state.prioritylevel,
-            completionstatus: this.state.completionstatus,
+            priority: this.state.priority,
+            isComplete: this.state.isComplete,
             employeeId: this.state.employeeId
         };
         
@@ -132,11 +132,11 @@ class EditTaskContainer extends Component {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority Level: </label>
-            <input type="text" name="prioritylevel" value={this.state.prioritylevel || ''} placeholder={task.prioritylevel} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="priority" value={this.state.priority || ''} placeholder={task.priority} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion Status: </label>
-            <input type="text" name="completionstatus" value={this.state.completionstatus || ''} placeholder={task.completionstatus} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="isComplete" value={this.state.isComplete || ''} placeholder={task.isComplete} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Employee ID: </label>
