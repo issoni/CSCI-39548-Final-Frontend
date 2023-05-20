@@ -5,11 +5,11 @@ const NewTaskView = (props) => {
     <div className="root">
       <div className="formContainer">
         <div className="formTitle">
-          <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+          <h2 style={{backgroundColor:"#47A992",color:"#482121",fontFamily:"courier",margin:0,padding:50}}>
             New Task
           </h2>
         </div>
-        <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
+        <form style={{backgroundColor:"#47A992",color:"#482121",fontFamily:"courier",margin:0,padding:80}}>
           <label style= {{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
           <input type="text" name="description" onChange ={(e) => handleChange(e)} />
           <br/>
@@ -33,6 +33,7 @@ const NewTaskView = (props) => {
         </form>
         {error!=="" && <p>{error}</p>}
         </div>
+        <div style={{backgroundColor:"#47A992",color:"#482121",fontFamily:"courier",margin:0,padding:300}}></div>
       </div>
     
   )
