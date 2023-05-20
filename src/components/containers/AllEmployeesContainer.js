@@ -1,14 +1,13 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchAllEmployeesThunk, deleteEmployeeThunk } from "../../store/thunks";
+import { fetchAllEmployeesThunk,deleteEmployeeThunk } from "../../store/thunks";
 import { AllEmployeesView } from "../views";
-import { employee } from "../../store/reducers";
 
 class AllEmployeesContainer extends Component {
   componentDidMount() {
     console.log(this.props);
-    this.props.fetchAllEmployeesThunk();
+    this.props.fetchAllEmployees();
   }
   render() {
     return <AllEmployeesView allEmployees={this.props.allEmployees} deleteEmployee={this.props.deleteEmployee}/>;
@@ -34,4 +33,3 @@ AllEmployeesContainer.propTypes = {
 };
 
 export default connect(mapState, mapDispatch)(AllEmployeesContainer);
-

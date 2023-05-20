@@ -8,23 +8,6 @@ import {
 
 import { EmployeeView } from "../views";
 
-import { useParams } from "react-router";
-
-import { Link } from "react-router-dom";
-
-const withRouter = (WrappedComponent) => (props) => {
-  const params = useParams();
-  // etc... other react-router-dom v6 hooks
-
-  return (
-    <WrappedComponent
-      {...props}
-      params={params}
-      // etc...
-    />
-  );
-};
-
 class EmployeeContainer extends Component {
   componentDidMount() {
     //getting employee ID from url
@@ -62,4 +45,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default withRouter(connect(mapState, mapDispatch)(EmployeeContainer));
+export default connect(mapState, mapDispatch)(EmployeeContainer);

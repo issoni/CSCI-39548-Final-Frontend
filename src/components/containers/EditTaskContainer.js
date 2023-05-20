@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
 import { fetchTaskThunk, editTaskThunk, fetchAllEmployeesThunk  } from '../../store/thunks';
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 /*
 IMPORTANT: comments regarding implementation details!!
@@ -38,17 +36,6 @@ a call to fetchTask after each editTask. We see that in the onClick
 functionality of the buttons controlling that portion of the UI. 
 
 */
-
-const withRouter = (WrappedComponent) => (props) => {
-  const params = useParams();
-
-  return (
-    <WrappedComponent
-      {...props}
-      params={params}
-    />
-  );
-};
 
 class EditTaskContainer extends Component {
     constructor(props){
@@ -150,6 +137,10 @@ class EditTaskContainer extends Component {
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion Status: </label>
             <input type="text" name="completionstatus" value={this.state.completionstatus || ''} placeholder={task.completionstatus} onChange={(e) => this.handleChange(e)}/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Employee ID: </label>
+            <input type="text" name="employeeId" value={this.state.employeeId || ''} placeholder={task.employeeId} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <select onChange={(e) => this.handleSelectChange(e)}>
