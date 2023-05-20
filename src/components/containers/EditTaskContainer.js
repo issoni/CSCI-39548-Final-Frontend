@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
 import { fetchTaskThunk, editTaskThunk, fetchAllEmployeesThunk  } from '../../store/thunks';
-
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /*
 IMPORTANT: comments regarding implementation details!!
@@ -37,6 +38,17 @@ a call to fetchTask after each editTask. We see that in the onClick
 functionality of the buttons controlling that portion of the UI. 
 
 */
+
+const withRouter = (WrappedComponent) => (props) => {
+  const params = useParams();
+
+  return (
+    <WrappedComponent
+      {...props}
+      params={params}
+    />
+  );
+};
 
 class EditTaskContainer extends Component {
     constructor(props){
