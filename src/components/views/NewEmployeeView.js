@@ -2,7 +2,7 @@ const NewEmployeeView = (props) => {
   const { handleChange, handleSubmit, error } = props;
 
   return (
-    <div className="root">
+    <div style={{backgroundColor:"#7A3E3E",color:"#EEEEEE",fontFamily:"courier",margin:0,padding:80}} className="root">
       <div className="formContainer">
         <div className="formTitle">
           <h2
@@ -59,6 +59,7 @@ const NewEmployeeView = (props) => {
         </form>
         {error !== "" && <p>{error}</p>}
       </div>
+      <h1 style={{backgroundColor:"#7A3E3E",color:"#EEEEEE",fontFamily:"courier",margin:0,padding:300}}> </h1>
     </div>
   )
 }

@@ -7,7 +7,7 @@ const EmployeeView = (props) => {
   let availableTasks = allTasks.filter(task => task.employeeId!==employee.id);
   
   return (
-    <div>      
+    <div style={{backgroundColor:"#7A3E3E",color:"#EEEEEE",fontFamily:"courier",margin:0,padding:80}}>      
       <h1>{employee.firstname}</h1>
       <h3>{employee.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
